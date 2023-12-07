@@ -1,13 +1,17 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Content from './Content.tsx'
 
-
-
-function App() {
-
+const App = () => {
   return (
     <>
-<p>content coming soon</p>
+      <div>
+        <Router>
+          <Routes>
+            <Route path="/" element= />
+          </Routes>
+        </Router>
+      </div>
     </>
   )
 }
-
 export default App
