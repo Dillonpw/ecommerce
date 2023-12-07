@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Content from './Content.tsx'
+import  Content  from './Content'
 
 const App = () => {
   return (
@@ -7,7 +7,7 @@ const App = () => {
       <div>
         <Router>
           <Routes>
-            <Route path="/" element= />
+            <Route path="/" element={<Content />} />
           </Routes>
         </Router>
       </div>

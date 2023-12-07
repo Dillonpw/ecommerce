@@ -1,5 +1,9 @@
-const Content = () =>{
-    <>
-    </>
-}
-export default Content
+const Content: React.FC = () => {
+    return (
+      <>
+
+      </>
+    );
+  };
+  
+  export default Content;
