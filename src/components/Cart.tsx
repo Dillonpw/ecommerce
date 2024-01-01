@@ -1,7 +1,6 @@
 const Cart: React.FC = () => {
     return(
          <>
-    
     </>);
 };
 
