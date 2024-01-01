@@ -3,7 +3,7 @@ import NavBar from "./Nav";
 
 const Header: React.FC = () => {
   return (
-    <div className="mb-8 flex items-center justify-between p-2 shadow-md">
+    <div className="mb-8 flex items-center justify-between p-2 shadow-lg">
       <Logo />
       <NavBar />
     </div>
