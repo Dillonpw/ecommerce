@@ -17,7 +17,7 @@ const Content: React.FC = () => {
           alt="clothing on a rack"
         />
         <Link
-          className="absolute left-1/2 top-1/2 z-40 -translate-x-1/2 -translate-y-1/2 transform rounded-3xl border-4 border-slate-800 bg-white px-10 py-4 text-4xl text-slate-800 hover:bg-slate-800 hover:text-white"
+          className="absolute left-1/2 top-1/2 z-40 -translate-x-1/2 -translate-y-1/2 transform rounded-3xl border-4 border-slate-800 bg-white px-10 py-4 text-4xl text-slate-800 hover:border-white hover:bg-slate-800 hover:text-white"
           to="/store"
         >
           Shop Now

@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
         Built using <b>React</b> and <b>Tailwind</b>, with some elements
         designed in Figma.
         <br />
-        Created by Dillon Walsh &copy;2023 All Rights Reserved
+        Created by Dillon Walsh &copy;2024 All Rights Reserved
       </p>
     </footer>
   );
