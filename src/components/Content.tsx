@@ -1,9 +1,13 @@
 import Header from "./Header";
 import hero from "/public/hero.jpg";
+
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
 const Content: React.FC = () => {
+
+
+
   return (
     <>
       <Header />
