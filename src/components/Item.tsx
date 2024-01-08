@@ -26,11 +26,11 @@ const Item: React.FC = () => {
     <div>
       <Header />
       <Link
-            className="m-6 rounded-2xl border-2 border-white bg-slate-800 p-3 text-3xl font-bold text-white hover:bg-white hover:text-slate-800"
-            to="/store"
-          >
-            Back
-          </Link>
+        className="m-6 rounded-2xl border-2 border-white bg-slate-800 p-3 text-3xl font-bold text-white hover:bg-white hover:text-slate-800"
+        to="/store"
+      >
+        Back
+      </Link>
       {product ? (
         <div className="mb-60 flex items-center justify-center">
           <img className="m-6 w-80" src={product.image} alt={product.title} />
@@ -39,10 +39,9 @@ const Item: React.FC = () => {
             <p className="w-80 font-bold">{product.description}</p>
             <div className="mt-4 flex flex-col  items-center rounded-xl bg-slate-800 p-2 text-white">
               <p className="p-3 text-2xl">Price: ${product.price}</p>
-              <Counter />
+              <Counter product={product} />
             </div>
           </div>
-
         </div>
       ) : (
         <h1 className="flex items-center justify-center text-4xl font-bold">

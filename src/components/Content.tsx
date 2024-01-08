@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
 const Content: React.FC = () => {
-
-
-
   return (
     <>
       <Header />
