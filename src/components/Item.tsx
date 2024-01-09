@@ -32,7 +32,7 @@ const Item: React.FC = () => {
         Back
       </Link>
       {product ? (
-        <div className="mb-60 flex items-center justify-center">
+        <div className="mb-60 flex flex-col md:flex-row items-center justify-center">
           <img className="m-6 w-80" src={product.image} alt={product.title} />
           <div className="flex flex-col items-center justify-center rounded-xl border-8 border-slate-800 p-4">
             <h2 className="m-2 w-80 text-2xl font-bold">{product.title}</h2>
