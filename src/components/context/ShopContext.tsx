@@ -78,7 +78,16 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
   };
 
   const removeFromCart = (productId: number) => {
-    setCartItems(cartItems.filter((item) => item.product.id !== productId));
+    setCartItems(
+      cartItems
+        .map((item) => {
+          if (item.product.id === productId) {
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        })
+        .filter((item) => item.quantity > 0),
+    );
   };
 
   const clearCart = (): void => {

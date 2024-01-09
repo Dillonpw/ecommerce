@@ -13,7 +13,7 @@ const Cart = () => {
           <ul className="flex flex-col">
             {cartItems.map((item) => (
               <li
-                className="m-4 md:flex md:w-[40%] items-center justify-center rounded-xl border-8 border-slate-800 p-4"
+                className="m-4 items-center justify-center rounded-xl border-8 border-slate-800 p-4 md:flex md:w-[40%]"
                 key={item.product.id}
               >
                 <img
@@ -41,7 +41,9 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <p>Your cart is empty.</p>
+        <p className="flex items-center justify-center p-10 text-6xl">
+          Nothing to see here!
+        </p>
       )}
     </>
   );
