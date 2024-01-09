@@ -24,8 +24,7 @@ interface ShopContextProps {
   cartItems: CartItem[];
   addToCart: (product: Product, quantity: number) => void;
   removeFromCart: (productId: number) => void;
-  clearCart: () => void
-
+  clearCart: () => void;
 }
 
 const defaultState: ShopContextProps = {
@@ -82,9 +81,9 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
     setCartItems(cartItems.filter((item) => item.product.id !== productId));
   };
 
-  const clearCart = (): void =>{
-    setCartItems([])
-  } ;
+  const clearCart = (): void => {
+    setCartItems([]);
+  };
 
   return (
     <ShopContext.Provider
