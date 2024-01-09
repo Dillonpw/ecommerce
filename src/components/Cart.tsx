@@ -1,10 +1,11 @@
 import { useShop } from "./context/ShopContext";
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useShop();
+  const { cartItems, removeFromCart, clearCart } = useShop();
 
   return (
     <div>
+      <p>Your Cart</p>
       {cartItems.length > 0 ? (
         <ul>
           {cartItems.map((item) => (
@@ -13,6 +14,7 @@ const Cart = () => {
               <button onClick={() => removeFromCart(item.product.id)}>
                 Remove
               </button>
+              <button onClick={() => clearCart()}>Checkout</button>
             </li>
           ))}
         </ul>
