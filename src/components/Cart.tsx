@@ -9,11 +9,11 @@ const Cart = () => {
       <Header />
       {cartItems.length > 0 ? (
         <div className="p-2">
-          <h1 className="mb-4 border-b-4 border-black text-4xl">Your Cart</h1>
+          <h1 className="mb-4 text-4xl">Your Cart</h1>
           <ul>
             {cartItems.map((item) => (
               <li
-                className="flex flex-col items-center justify-center rounded-xl border-8 border-slate-800"
+                className="m-4 flex w-[40%] items-center justify-center rounded-xl border-8 border-slate-800 p-4"
                 key={item.product.id}
               >
                 <img
