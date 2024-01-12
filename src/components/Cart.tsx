@@ -4,6 +4,10 @@ import Header from "./Header";
 const Cart = () => {
   const { cartItems, removeFromCart, clearCart } = useShop();
 
+  const totalPrice = cartItems.reduce((total, item) => {
+    return total + item.quantity * item.product.price;
+  }, 0);
+
   return (
     <>
       <Header />
@@ -21,19 +25,20 @@ const Cart = () => {
                   src={item.product.image}
                   alt={item.product.title}
                 />
-                {item.product.title} - Quantity: {item.quantity}
+                {item.product.title} Quantity: {item.quantity} <br /> {item.product.price}
                 <button
-                  className="m-4 rounded-2xl border-4 border-slate-800 bg-white px-2 py-2 text-lg text-slate-800 hover:border-white hover:bg-slate-800 hover:text-white"
+                  className="m-4 rounded-2xl border-4 border-slate-800 bg-white px-6 py-4 text-lg text-slate-800 hover:border-white hover:bg-slate-800 hover:text-white"
                   onClick={() => removeFromCart(item.product.id)}
                 >
-                  Remove from cart
+                  Edit
                 </button>
               </li>
             ))}
           </ul>
-          <div className="flex justify-center">
+          <div className="flex flex-col justify-center items-center">
+          <p className="text-2xl">Total Price: ${totalPrice.toFixed(2)}</p>
             <button
-              className="mt-6 rounded-2xl border-4 border-slate-800 bg-white px-2 py-2 text-lg text-slate-800 hover:border-white hover:bg-slate-800 hover:text-white"
+              className="mt-6 rounded-2xl border-4 border-slate-800 bg-white px-5 py-4 text-lg text-slate-800 hover:border-white hover:bg-slate-800 hover:text-white"
               onClick={() => clearCart()}
             >
               Checkout
