@@ -24,7 +24,6 @@ const NavBar: React.FC = () => {
         to="/cart"
       >
         <FontAwesomeIcon icon={faCartShopping} /> {totalItemsInCart}{" "}
-        {/* Correct usage of FontAwesomeIcon */}
       </Link>
     </div>
   );
