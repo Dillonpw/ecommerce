@@ -1,7 +1,7 @@
 import Header from "./Header";
-import hero from "/public/hero.jpg";
-
+import hero from "/hero.jpg";
 import { Link } from "react-router-dom";
+import Testimonial from "./Testimonial";
 import Footer from "./Footer";
 
 const Content: React.FC = () => {
@@ -24,6 +24,7 @@ const Content: React.FC = () => {
           Shop Now
         </Link>
       </div>
+      <Testimonial />
       <Footer />
     </>
   );

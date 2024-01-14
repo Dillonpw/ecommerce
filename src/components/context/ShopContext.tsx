@@ -54,7 +54,7 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products?limit=8")
+    fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching data:", error));
