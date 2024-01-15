@@ -24,9 +24,8 @@ const Store: React.FC = () => {
     <>
       <Header />
       <div className="bg-slate-800">
-        <h1 className="m-2 p-2 text-4xl font-bold text-white">Products.</h1>
-
         <div className="flex items-center justify-between">
+          <h1 className="m-2 p-2 text-4xl font-bold text-white">Products.</h1>
           <Alert className="m-4 w-fit border-4">
             <AlertTitle>Before you Ask!</AlertTitle>
             <AlertDescription>
@@ -58,7 +57,7 @@ const Store: React.FC = () => {
             ))}
             <AlertDialog>
               <AlertDialogTrigger>
-                <div className="m-4 rounded-lg border-4 bg-white p-6 hover:bg-gray-200 hover:jiggle">
+                <div className="hover:jiggle m-4 rounded-lg border-4 bg-white p-6 hover:bg-gray-200">
                   Want to know when we relase new items?{" "}
                 </div>
               </AlertDialogTrigger>
