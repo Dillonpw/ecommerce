@@ -10,7 +10,7 @@ const Content: React.FC = () => {
       <Header />
       <div className="relative bg-slate-800 text-white">
         <span className="flex justify-center p-8  text-2xl md:text-6xl">
-          Generic items for sale.
+          Generic items for sale
         </span>
         <img
           className="h-auto w-full rounded-lg"
