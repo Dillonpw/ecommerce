@@ -58,7 +58,7 @@ const Store: React.FC = () => {
             ))}
             <AlertDialog>
               <AlertDialogTrigger>
-                <div className="m-4 rounded-lg border-4 bg-white p-6 hover:bg-gray-200">
+                <div className="m-4 rounded-lg border-4 bg-white p-6 hover:bg-gray-200 hover:jiggle">
                   Want to know when we relase new items?{" "}
                 </div>
               </AlertDialogTrigger>

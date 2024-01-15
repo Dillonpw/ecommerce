@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useShop } from "./context/ShopContext";
+import { Button } from "@/components/ui/button";
+
 
 interface CounterProps {
   product: Product;
@@ -39,12 +41,12 @@ const Counter: React.FC<CounterProps> = ({ product }) => {
           +
         </button>
       </div>
-      <button
-        className="mt-2 rounded-xl border-2 border-white bg-slate-800 p-2 font-bold text-white hover:bg-white hover:text-slate-800"
+      <Button
+        className="mt-2 rounded-xl border-2 border-white bg-slate-800 p-2 font-bold text-white hover:bg-white hover:border-slate-800 hover:text-slate-800"
         onClick={() => addToCart(product, count)}
       >
         Add to Cart
-      </button>
+      </Button>
     </>
   );
 };
