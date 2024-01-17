@@ -23,7 +23,7 @@ const Store: React.FC = () => {
   return (
     <>
       <Header />
-      <div className="bg-slate-800">
+      <main className="bg-slate-800">
         <div className="flex items-center justify-between">
           <h1 className="m-2 p-2 text-4xl font-bold text-white">Products.</h1>
           <Alert className="m-4 w-fit border-4">
@@ -85,7 +85,7 @@ const Store: React.FC = () => {
         ) : (
           <h2 className="flex justify-center text-4xl">Loading products...</h2>
         )}
-      </div>
+      </main>
       <Footer />
     </>
   );

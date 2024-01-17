@@ -12,7 +12,7 @@ const NavBar: React.FC = () => {
   );
 
   return (
-    <div className="p-4">
+    <nav className="p-4">
       <Link
         className="m-2 rounded-lg p-2 text-4xl hover:bg-slate-800 hover:text-white"
         to="/store"
@@ -25,7 +25,7 @@ const NavBar: React.FC = () => {
       >
         <FontAwesomeIcon icon={faCartShopping} /> {totalItemsInCart}{" "}
       </Link>
-    </div>
+    </nav>
   );
 };
 

@@ -24,7 +24,7 @@ const Cart = () => {
       <h1 className="m-4 text-4xl">Your Cart</h1>
 
       {cartItems.length > 0 ? (
-        <div className="grid grid-cols-1 p-2 md:grid-cols-2">
+        <main className="grid grid-cols-1 p-2 md:grid-cols-2">
           <ul className=" col-span-1 flex flex-col items-center">
             {cartItems.map((item) => (
               <li
@@ -80,7 +80,7 @@ const Cart = () => {
               </Button>
             </CardFooter>
           </Card>
-        </div>
+        </main>
       ) : (
         <p className="flex items-center justify-center p-10 text-6xl">
           Nothing to see here!
