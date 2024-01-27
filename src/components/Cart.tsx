@@ -21,11 +21,11 @@ const Cart = () => {
   return (
     <>
       <Header />
-      <h1 className="m-4 text-4xl">Your Cart</h1>
+      <h1 className="mb-10 text-4xl text-center font-bold">Your Cart</h1>
 
-      {cartItems.length > 0 ? (
-        <main className="grid grid-cols-1 p-2 md:grid-cols-2">
-          <ul className=" col-span-1 flex flex-col items-center">
+      <main className="mb-40 grid grid-cols-1 p-2 md:grid-cols-2">
+        {cartItems.length > 0 ? (
+          <ul className="col-span-1 flex flex-col items-center">
             {cartItems.map((item) => (
               <li
                 className="m-2 w-80 flex-col items-center justify-center"
@@ -47,47 +47,47 @@ const Cart = () => {
               </li>
             ))}
           </ul>
-          <Card className="h-fit rounded-xl bg-gray-200 md:w-[80%] ">
-            <CardHeader>
-              <CardTitle>Ready To Check Out?</CardTitle>
-              <CardDescription className="text-2xl">
-                Total: ${totalPrice.toFixed(2)}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="flex flex-col gap-4" action="submit">
-                <label htmlFor="name">Payment Info: </label>
-                <input
-                  className="h-10 w-[90%] border-2 pl-2"
-                  type="text"
-                  id="name"
-                  placeholder="Name on card"
-                />
-                <label htmlFor="cardNum">Card Number: </label>
-                <input
-                  className="h-10 w-[90%] border-2 pl-2"
-                  type="text"
-                  placeholder="1234-5678-9876-5432"
-                />
-              </form>
-            </CardContent>
-            <CardFooter>
-              <Button
-                className="m-4 rounded-2xl border-2 border-slate-800 bg-white px-6 py-6 text-lg text-slate-800 hover:border-white hover:bg-slate-800 hover:text-white"
-                onClick={() => clearCart()}
-              >
-                Checkout
-              </Button>
-            </CardFooter>
-          </Card>
-        </main>
-      ) : (
-        <p className="flex items-center justify-center p-10 text-6xl">
-          Nothing to see here!
-        </p>
-      )}
-          <Footer/>
+        ) : (
+          <div className="col-span-1 mb-40 flex items-center justify-center p-10 text-6xl">
+            Nothing to see here!
+          </div>
+        )}
 
+        <Card className="h-fit rounded-xl bg-gray-200 md:w-[80%]">
+          <CardHeader>
+            <CardTitle>Ready To Check Out?</CardTitle>
+            <CardDescription className="text-2xl">
+              Total: ${totalPrice.toFixed(2)}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form className="flex flex-col gap-4" action="submit">
+              <label htmlFor="name">Payment Info: </label>
+              <input
+                className="h-10 w-[90%] border-2 pl-2"
+                type="text"
+                id="name"
+                placeholder="Name on card"
+              />
+              <label htmlFor="cardNum">Card Number: </label>
+              <input
+                className="h-10 w-[90%] border-2 pl-2"
+                type="text"
+                placeholder="1234-5678-9876-5432"
+              />
+            </form>
+          </CardContent>
+          <CardFooter>
+            <Button
+              className="m-4 rounded-2xl border-2 border-slate-800 bg-white px-6 py-6 text-lg text-slate-800 hover:border-white hover:bg-slate-800 hover:text-white"
+              onClick={() => clearCart()}
+            >
+              Checkout
+            </Button>
+          </CardFooter>
+        </Card>
+      </main>
+      <Footer />
     </>
   );
 };

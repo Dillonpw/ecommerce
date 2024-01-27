@@ -24,7 +24,7 @@ const Store: React.FC = () => {
     <>
       <Header />
       <main className="bg-slate-800">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-center flex-col">
           <h1 className="m-2 p-2 text-4xl font-bold text-white">Products.</h1>
           <Alert className="m-4 w-fit border-4">
             <AlertTitle>Before you Ask!</AlertTitle>
@@ -37,7 +37,7 @@ const Store: React.FC = () => {
           <ul className="flex flex-wrap justify-center gap-4">
             {products.map((product) => (
               <li
-                className="m-2 flex h-80 w-60 flex-col items-center justify-center rounded-lg bg-white p-2"
+                className="m-2 flex h-80 w-80 flex-col items-center justify-center rounded-lg bg-white p-2"
                 key={product.id}
               >
                 <Link to={`/item/${product.id}`} className="text-center">
