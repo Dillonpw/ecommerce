@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons"; // Importing the correct icon
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { useShop } from "./context/ShopContext";
 
 const NavBar: React.FC = () => {
