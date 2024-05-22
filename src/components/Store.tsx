@@ -23,9 +23,11 @@ const Store: React.FC = () => {
   return (
     <>
       <Header />
-      <main className="bg-slate-800">
-        <div className="flex items-center justify-center flex-col">
-          <h1 className="m-2 p-2 text-4xl font-bold text-white">Products.</h1>
+      <main className="bg-white">
+        <div className="flex flex-col items-center justify-center">
+          <h1 className="m-2 p-2 text-4xl font-bold text-slate-800">
+            Products.
+          </h1>
           <Alert className="m-4 w-fit border-4">
             <AlertTitle>Before you Ask!</AlertTitle>
             <AlertDescription>
@@ -57,7 +59,7 @@ const Store: React.FC = () => {
             ))}
             <AlertDialog>
               <AlertDialogTrigger>
-                <div className="hover:jiggle m-4 rounded-lg border-4 bg-white p-6 hover:bg-gray-200">
+                <div className="m-4 rounded-lg border-4 bg-slate-800 p-6 text-white hover:bg-gray-600">
                   Want to know when we relase new items?{" "}
                 </div>
               </AlertDialogTrigger>
