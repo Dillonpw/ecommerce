@@ -31,7 +31,7 @@ const Store: React.FC = () => {
           <Alert className="m-4 w-fit border-4">
             <AlertTitle>Before you Ask!</AlertTitle>
             <AlertDescription>
-              All items are one size fits some!
+              All clothing items are one size fits some!
             </AlertDescription>
           </Alert>
         </div>
