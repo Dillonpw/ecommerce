@@ -13,7 +13,7 @@ const Content: React.FC = () => {
           Generic items for sale
         </span>
         <img
-          className="h-auto w-full rounded-lg"
+          className="h-auto w-full rounded-t-lg"
           src={hero}
           alt="clothing on a rack"
         />
