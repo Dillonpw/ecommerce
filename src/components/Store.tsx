@@ -18,7 +18,11 @@ import Counter from "./Counter";
 import Footer from "./Footer";
 
 const Store: React.FC = () => {
-  const { products } = useShop();
+  const { products, categories, setCategory, selectedCategory } = useShop();
+
+  const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setCategory(event.target.value);
+  };
 
   return (
     <>
@@ -26,7 +30,7 @@ const Store: React.FC = () => {
       <main className="bg-white">
         <div className="flex flex-col items-center justify-center">
           <h1 className="m-2 p-2 text-4xl font-bold text-slate-800">
-            Products.
+            Products
           </h1>
           <Alert className="m-4 w-fit border-4">
             <AlertTitle>Before you Ask!</AlertTitle>
@@ -34,6 +38,24 @@ const Store: React.FC = () => {
               All clothing items are one size fits some!
             </AlertDescription>
           </Alert>
+          <div className="m-4">
+            <label htmlFor="category" className="mr-2 text-lg">
+              Filter by Category:
+            </label>
+            <select
+              id="category"
+              className="border-2 p-2"
+              value={selectedCategory}
+              onChange={handleCategoryChange}
+            >
+              <option value="">All</option>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
         {products.length > 0 ? (
           <ul className="flex flex-wrap justify-center gap-4">
@@ -60,7 +82,7 @@ const Store: React.FC = () => {
             <AlertDialog>
               <AlertDialogTrigger>
                 <div className="m-4 rounded-lg border-4 bg-slate-800 p-6 text-white hover:bg-gray-600">
-                  Want to know when we relase new items?{" "}
+                  Want to know when we release new items?{" "}
                 </div>
               </AlertDialogTrigger>
               <AlertDialogContent>
@@ -69,7 +91,7 @@ const Store: React.FC = () => {
                     Get Updates when we drop something new!
                   </AlertDialogTitle>
                   <AlertDialogDescription>
-                    Please Enter your email address or phone number to get
+                    Please enter your email address or phone number to get
                     notified.
                   </AlertDialogDescription>
                   <label htmlFor="email">Email:</label>

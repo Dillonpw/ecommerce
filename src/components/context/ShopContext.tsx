@@ -12,6 +12,7 @@ interface Product {
   price: number;
   description: string;
   image: string;
+  category: string;
 }
 
 interface CartItem {
@@ -21,18 +22,24 @@ interface CartItem {
 
 interface ShopContextProps {
   products: Product[];
+  categories: string[];
+  selectedCategory: string;
   cartItems: CartItem[];
   addToCart: (product: Product, quantity: number) => void;
   removeFromCart: (productId: number) => void;
   clearCart: () => void;
+  setCategory: (category: string) => void;
 }
 
 const defaultState: ShopContextProps = {
   products: [],
+  categories: [],
+  selectedCategory: "",
   cartItems: [],
   addToCart: () => {},
   removeFromCart: () => {},
   clearCart: () => {},
+  setCategory: () => {},
 };
 
 interface ShopProviderProps {
@@ -51,26 +58,34 @@ export const useShop = () => {
 
 export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
-      .then((data) => setProducts(data))
+      .then((data: Product[]) => {
+        setProducts(data);
+        const uniqueCategories = Array.from(
+          new Set(data.map((product) => product.category))
+        );
+        setCategories(uniqueCategories);
+      })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   const addToCart = (product: Product, quantity: number) => {
     const existingCartItem = cartItems.find(
-      (item) => item.product.id === product.id,
+      (item) => item.product.id === product.id
     );
     if (existingCartItem) {
       setCartItems(
         cartItems.map((item) =>
           item.product.id === product.id
             ? { ...item, quantity: item.quantity + quantity }
-            : item,
-        ),
+            : item
+        )
       );
     } else {
       setCartItems([...cartItems, { product, quantity }]);
@@ -86,7 +101,7 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
           }
           return item;
         })
-        .filter((item) => item.quantity > 0),
+        .filter((item) => item.quantity > 0)
     );
   };
 
@@ -94,9 +109,26 @@ export const ShopProvider: React.FC<ShopProviderProps> = ({ children }) => {
     setCartItems([]);
   };
 
+  const setCategory = (category: string) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.category === selectedCategory)
+    : products;
+
   return (
     <ShopContext.Provider
-      value={{ products, cartItems, addToCart, removeFromCart, clearCart }}
+      value={{
+        products: filteredProducts,
+        categories,
+        selectedCategory,
+        cartItems,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        setCategory,
+      }}
     >
       {children}
     </ShopContext.Provider>

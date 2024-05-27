@@ -26,7 +26,7 @@ const Item: React.FC = () => {
     <div>
       <Header />
       <Link
-        className="m-6 rounded-2xl border-2 border-white bg-slate-800 p-3 text-3xl font-bold text-white hover:bg-white hover:text-slate-800"
+        className=" m-10 rounded-2xl border-2 border-white bg-slate-800 p-3 text-3xl font-bold text-white hover:bg-white hover:text-slate-800"
         to="/store"
       >
         Back

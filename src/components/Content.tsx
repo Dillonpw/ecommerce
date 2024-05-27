@@ -8,7 +8,7 @@ const Content: React.FC = () => {
   return (
     <>
       <Header />
-      <main className="relative bg-slate-800 text-white">
+      <main className="relative mt-[-3rem] bg-slate-800 text-white">
         <span className="flex justify-center p-8  text-2xl md:text-6xl">
           Generic items for sale
         </span>

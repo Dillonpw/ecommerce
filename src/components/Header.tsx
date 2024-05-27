@@ -4,7 +4,7 @@ import NavBar from "./Nav";
 
 const Header: React.FC = () => {
   return (
-    <header className=" flex items-center justify-between bg-gray-200 p-2">
+    <header className="mb-10 flex items-center justify-between bg-gray-200 p-2">
       <Logo />
       <NavBar />
     </header>
